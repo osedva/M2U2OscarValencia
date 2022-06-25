@@ -1,6 +1,3 @@
-.ocultar{
-  display: none;
-}
 
 .form{
   text-align: center;
@@ -17,7 +14,10 @@
     
 	}
 
-  
+  .divbtntareas{
+    text-align: center;
+
+  }
   
   
 

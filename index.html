@@ -9,7 +9,12 @@
     
 </head>
 <body>
-    <div>
+    <div class="divbtntareas">
+        <input type="button" id="taruno" class="submit-btn" value="Tarea uno">
+        <input type="button" id="tardos" class="submit-btn" value="Tarea dos">
+   </div>
+    
+    <div id="tUno">
         <form id="regmat" name="regmat" class="form" onsubmit="sendText(event)">
             <h2>Registrar Materias</h2>
             <input type="text" id="nombre" name="nombre" class="input" placeholder="Ingresa tu nombre">
@@ -27,14 +32,44 @@
                 <input type="button" id="total" class="submit-btn" value="Totalizar">
 
                 <h3 id="infomat" class="inf"></h3>
+                <table id="tabtot" class="table">
+                    <th>Descripcion</th>
+                    <th>Valor</th>
+                    <th>Descuento</th>
+                    <th>Total</th>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Papeleria</td>
+                        <td>$ 20000</td>
+                        <td>$ 0</td>
+                        <td>$ 20000</td>
+                    </tr>
+                    <tr>
+                        <td>carné</td>
+                        <td>$ 8000</td>
+                        <td>$ 0</td>
+                        <td>$ 8000</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="inf">Pago</td>
+                        <td class="inf">Total</td>
+                        <td class="inf"></td>
+                    </tr>
+                </table>
         </form>
-     
+        
     </div>
 
     
 
 
-    <div class="ocultar">
+    <div id="tDos">
         <form id="mayme" name="mayme" class="form" onsubmit="sendText(event)">
             <h2>Mayor y Menor</h2>
             <input type="number" id="numA" name="numA" class="input" placeholder="Numero uno">
@@ -43,10 +78,11 @@
             <input type="number" id="numD" name="numD" class="input" placeholder="Numero cuatro">
             <input type="button" id="submit" class="submit-btn" value="enviar">
             <input type="button" id="borrar" class="submit-btn" value="borrar">
-            
+            <h3 id="info" class="inf"></h3>
         </form>
-        <h3 id="info" class="inf"></h3>
+        
     </div>
+   
 </body>
 <script src='tareauno.js'></script>
 <script src='tareados.js'></script>

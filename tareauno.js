@@ -1,6 +1,29 @@
+let divUno = document.getElementById("tUno");
 let btnaMate = document.getElementById("agrMateria");
+let btnTotal = document.getElementById("total");
 let infomat = document.getElementById("infomat");
-document.forms["regmat"].elements[0].focus();
+let btntaruno = document.getElementById("taruno");
+let tbtot = document.getElementById("tabtot");
+let nombre = document.getElementById("nombre");
+divUno.style.display = "none";
+
+btntaruno.addEventListener('click',()=>{
+  divUno.style.display = "block"; 
+  divDos.style.display = "none";
+  tbtot.style.display = "none";
+  let tbmat = document.getElementById("tableMate");
+  let lon = tbmat.getElementsByTagName('tr');
+  if (lon.length > 1) { 
+    filas = lon.length;
+    for(var i = 1 ; i < filas ; i++){ 
+      document.getElementById("tableMate").deleteRow(1);
+    } 
+  } 
+  infomat.innerHTML = ""; 
+  document.forms["regmat"].reset();  
+  document.forms["regmat"].elements[0].focus();
+});
+
 
 nombre.addEventListener('keyup',()=>{ //primera letra mayuscula y no deja colocar numeros
         let inputname = document.activeElement.name, ip = 0, res = [], texto = document.getElementById(inputname).value.toLowerCase() ;  //Variables
@@ -30,10 +53,7 @@ if(nombre == ""){
 }else{
   verfswal();
 }
- 
 });
-
-
 
 function cerrswal(e){
   e.preventDefault()
@@ -41,7 +61,8 @@ function cerrswal(e){
 }   
 
 
-function verfswal(){     
+function verfswal(){  
+    
     Swal.fire({
       title: '',
       text: "",
@@ -151,9 +172,6 @@ function verfswal(){
 
   }
 
-
-  
-
     function eliFila(x){
       let fila = $(x).closest("tr");
 		  let colUno = fila.find("td:eq(0)").html();
@@ -168,16 +186,55 @@ function verfswal(){
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
+          tbtot.style.display = "none";
+          infomat.innerHTML = "";
           let i = x.parentNode.parentNode.rowIndex;
           document.getElementById("tableMate").deleteRow(i);
         }
       })
-
-
       }
 
+  btnTotal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let tableMate = document.getElementById("tableMate");
+    let long = tableMate.getElementsByTagName('tr').length;
+    if (long==1) {
+      tbtot.style.display = "none";
+      infomat.innerHTML = "Agrega almenos una Materia";
+      setTimeout('infomat.innerHTML = ""',3000);
+    }else{
+      tbtot.style.display = "block";
+      let tabtot = document.getElementById("tabtot");
+      let celTabTot = tabtot.getElementsByTagName('td');
 
+      let cont = 1;
+      let valor = 0;
+      let datotd = tableMate.getElementsByTagName('td');
+      for (let i = 0;i < datotd.length; i++) {
+        if(i == cont){
+          valor = valor + parseInt(datotd[i].innerHTML);
+          cont = cont + 4;
+        }
+      }
+      let desc = valor * (20/100);
+      let toMa = valor - desc; 
+      celTabTot[0].innerHTML = long -1 + " Materia(s)";
+      celTabTot[1].innerHTML = "$ " + valor ;
+      celTabTot[2].innerHTML = "$ " + desc ;
+      celTabTot[3].innerHTML = "$ " + toMa ;
+      celTabTot[15].innerHTML = "$ " + (toMa + 20000 + 8000) ;
+      infomat.innerHTML = nombre.value + "<br>total a pagar es<br>" + "$ " + (toMa + 20000 + 8000);
+    }
+    });
    
+
+    nombre.addEventListener('keydown',(e)=>{         // con esta funcion movemos el focus con tecla enter
+      var codTecla = e.keyCode;
+      if (codTecla === 13){
+        btnaMate.focus();
+      }
+    });  
+
 
   function sendText(e) {
       e.preventDefault();
