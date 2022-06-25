@@ -9,31 +9,33 @@
     
 </head>
 <body>
-    <div id="ejuno" class="oculta center">
-        <form id="regmat" name="regmat" class="form" method="#">
+    <div>
+        <form id="regmat" name="regmat" class="form" onsubmit="sendText(event)">
             <h2>Registrar Materias</h2>
             <input type="text" id="nombre" name="nombre" class="input" placeholder="Ingresa tu nombre">
-            <div>
-                <input type="button" id="" value="Agregar Materia" onClick="agrerarmateria()">
-                
-                <table>
+                <input type="button" id="agrMateria" class="submit-btn btn-table" value="Agregar Materia" >
 
+                <table id="tableMate" class="table">
+                    <th>Materia</th>
+                    <th>Valor</th>
+                    <th>Descuento</th>
+                    <th>Eliminar</th>
                 </table>
+            
                 <p>papeleria $ 20.000</p>
                 <p>carné $ 8.000</p>
-            </div> 
+                <input type="button" id="total" class="submit-btn" value="Totalizar">
+
+                <h3 id="infomat" class="inf"></h3>
         </form>
-
-
-
-
+     
     </div>
 
+    
 
 
-
-    <div id="ejdos" class="center ocultar">
-        <form id="mayme" name="mayme" class="form" method="#">
+    <div class="ocultar">
+        <form id="mayme" name="mayme" class="form" onsubmit="sendText(event)">
             <h2>Mayor y Menor</h2>
             <input type="number" id="numA" name="numA" class="input" placeholder="Numero uno">
             <input type="number" id="numB" name="numB" class="input" placeholder="Numero dos">
@@ -46,8 +48,9 @@
         <h3 id="info" class="inf"></h3>
     </div>
 </body>
-<script src='ejemplouno.js'></script>
-<script src='ejemplodos.js'></script>
+<script src='tareauno.js'></script>
+<script src='tareados.js'></script>
 <script src='swal.js'></script>
+<script src="jquery.min.js"></script>
 
 </html>

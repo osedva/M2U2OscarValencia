@@ -2,24 +2,24 @@
   display: none;
 }
 
-
-.center{
+.form{
   text-align: center;
   position: absolute;
   top: 5%;
-  left: 35%;  
-}
-
-.form{
+  left: 35%;
 	width: 100%;
 	padding: 10px 10px 50px 10px;
 	background-color: #fff;
 	background: rgba(0,0,0,0.1);
 	margin-top:20px;
 	border-radius:9px;
-    max-width: 300px;
+  max-width: 400px;
     
 	}
+
+  
+  
+  
 
   .input{
     color:#000;
@@ -33,10 +33,19 @@
     background-color:#fff;
     padding: 3px 3px 3px 3px;
     width: 85%;
-    height: 30px;
+    height: 25px;
     border-radius: 5px;
     } 
 
+  .sele{
+      height: 34px;
+      width: 42%;
+     }
+     
+  .inputvalor{
+      width: 42%;
+    } 
+   
   
   .submit-btn {
     margin-left: 0;
@@ -54,20 +63,50 @@
     width:40%;
   }
 
-  .submit-btn:hover {
+  .btn-table{
+    font-size: 12px;
+    padding: 2px 2px 2px 2px;
+    color: #ff0202;
+  }
+
+  
+
+  .inf{
+    color: #ff0202;
+  }
+
+  .btn-elim{
+    margin-left: 0;
+    border: 1px solid #00ac09d0;
+    outline: none;
+    background: #fff;
+    color: #ff0202;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    width:100%;
+
+  }
+
+
+  .submit-btn:hover, .btn-elim:hover {
     background: #00ac09d0;
     color: #fff;
   }
 
-  .inf{
-    color: #ff0202;
-
+  .table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 15px 0px 0px 0px;
   }
 
 
-
-
-
+  
 
 
 
@@ -83,20 +122,24 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-.formSwal{
-	width: 100%;
-	padding: 10px 10px 50px 10px;
+#fswal{
+  background: rgba(0,0,0,0.1);
+	width: 80%;
+	padding: 5px 5px 20px 5px;
 	background-color: #fff;
 	
-	margin-top:20px;
+	margin-top:5px;
 	border-radius:9px;
-    max-width: 600px;
+    max-width: 300px;
 	}
 
   .popup-form{    /* con esta clase cambiamos de tamaño el swal */
-    width: 500px;
-    max-width: 700px;
-    background-color:rgba(0,0,0,0);
+    width: 100px;
+    max-width: 400px;
+    background: rgba(0,0,0,0.6);
     
   }
+
+
+  
    
