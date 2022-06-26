@@ -3,7 +3,8 @@ Archivo css.
 Archivo jquery.min.js en este proyecto lo use para búsqueda de información en tablas.
 Archivo swal.js para el uso de alertas personalizadas.
 Archivo tareauno.js algoritmos relacionados con la tarea uno.
-Archivo tareados.js algoritmos relacionados con la tarea dos
+Archivo tareados.js algoritmos relacionados con la tarea dos.
+Dos archivos en formato png con los diagramas de flujo tarea uno y tarea dos.
 
 Tarea uno.
 El usuario puede ingresar nombre, el input convierte a nombre propio en la escritura si no hay nombre no puede continuar.
