@@ -45,6 +45,8 @@ nombre.addEventListener('keyup',()=>{ //primera letra mayuscula y no deja coloca
 });
 
 btnaMate.addEventListener('click',()=>{
+  tbtot.style.display = "none";
+  infomat.innerHTML = "";
 let nombre = document.getElementById("nombre").value;
 if(nombre == ""){
   infomat.innerHTML = "Ingresa Nombre";
